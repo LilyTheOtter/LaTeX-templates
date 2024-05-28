@@ -1,0 +1,83 @@
+%%%%%%%%%%%%%%%%% Credits %%%%%%%%%%%%%%%%%%
+%%%%%%% Template made by Lily Leewis %%%%%%%
+%%%%%% Look inspired by Liera de Kimpe %%%%%
+
+%%%%%% Essential %%%%%%
+\input{settings}
+
+%%%%%% All packages %%%%%%
+\usepackage{import}
+\usepackage{packages/tracklang}
+\usepackage{parskip} %for enters between paragraphs
+\usepackage{float}
+\usepackage[dvipsnames,table]{xcolor}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{makecell}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{geometry}
+% \usepackage{mathptmx} % Set font to Times
+\usepackage{bookmark}
+\usepackage{tocbibind}
+\usepackage{hyphsubst}
+\usepackage[\languagevar]{babel}
+\usepackage{listings}
+\usepackage[
+    citestyle=authoryear,
+    backend=biber,
+    style=ieee,
+]{biblatex}
+\usepackage[babel]{csquotes}
+\usepackage{hyperref}
+\usepackage[style=tree, nonumberlist, translate=babel]{glossaries}
+
+%%%%%% Command renewals %%%%%%
+\renewcommand{\glossarysection}[2][]{} % Don't add own title automatically
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+%%%%%% Aesthetics %%%%%%
+\setlength{\glsdescwidth}{0.7\textwidth} % Make glossary sort the size of page
+\fancyhf{}
+\pagestyle{fancy}
+\setlength{\headheight}{2cm} % To make header hight large enough
+\lfoot{Pagina \thepage\space van \pageref{LastPage}}
+\lhead{\lheadvar}
+\rhead{
+    \includegraphics[width = 3cm]{assets/img/HU/logo.png}
+}
+\lstset{
+  basicstyle=\ttfamily,
+  columns=fullflexible,
+  frame=single,
+  breaklines=true,
+  postbreak=\mbox{\space},
+  moredelim=**[is][\color{red}]{---}{---},
+  moredelim=**[is][\color{green}]{+++}{+++},
+}
+
+%%%%%% Miscelanious %%%%%%
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=RoyalBlue,
+    citecolor=Fuchsia,
+    pdftitle={\pdftitlevar},
+    pdfauthor={\pdfauthorvar},
+    pdfsubject={\pdfsubjectvar},
+}
+\makenoidxglossaries
+
+% \renewcommand{\baselinestretch}{1.5} % Set line spacing to 1.5
+\pdfcompresslevel=9
+\pdfobjcompresslevel=3
+
+%%%%%% Custom commands %%%%%%
+% The following macro's give different notations in the document
+\newcommand*{\fullref}[1]{\hyperref[{#1}]{\autoref*{#1} \nameref*{#1}}} % Output is "type of section" + "section number" + "section name"
+\newcommand*{\partialref}[1]{\hyperref[{#1}]{\nameref*{#1}}}
+
+%%%%%% Imports %%%%%%
+\import{./core/}{glosseryEntries}
+\addbibresource{./core/references.bib}

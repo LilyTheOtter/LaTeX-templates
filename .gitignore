@@ -1,8 +1,5 @@
-# Folders for personal use
+## Folders for personal use
 /test
-
-
-
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
@@ -48,7 +45,8 @@
 
 ## Build tool directories for auxiliary files
 # latexrun
-latex.out/
+/Template/main_out
+!/Template/main_out/main.pdf
 
 ## Auxiliary and intermediate files from other packages:
 # algorithms

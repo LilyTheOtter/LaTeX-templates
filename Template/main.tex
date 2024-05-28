@@ -1,28 +1,24 @@
 \documentclass[a4paper]{article} 
 
-\usepackage{import}
-
-\import{./}{settings}
+\usepackage{packages/hutemplate}
 
 \begin{document}
 \pagenumbering{gobble} % Disable page numbering
     \maketitle
-
     \newpage
     \pagenumbering{arabic} % Enable page numbering 
     \rfoot{\partialref{content}}
     \tableofcontents\label{content}
+
 \begin{flushleft}
     \newpage
-    \rfoot{\partialref{lorem}}
-    \import{./chapters}{lorem}
-
-    \newpage
-    \rfoot{\partialref{loremipsum}}
-    \import{./chapters}{lorem ipsum}
+    \rfoot{\partialref{examplelabel}}
+    \import{./chapters}{example}
     \newpage
 \end{flushleft}
 \newpage
-\rfoot{Referenties}
-\import{./core}{referenties}
+\import{./core/}{glossary}
+\newpage
+\rfoot{References}
+\import{./core}{references}
 \end{document}
